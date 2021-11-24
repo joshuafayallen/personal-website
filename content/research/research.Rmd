@@ -1,0 +1,21 @@
+---
+title: "Research"
+linktitle: "Research"
+menu:
+ research:
+ parent: Research
+ weight: 1
+type: docs
+
+---
+This page is dedicated to my research and what not. 
+
+# Publications
+
+So far nothing to report on the publication front but hopefully that changes soon. 
+
+
+
+# Working Papers
+
+- Testing The Effects of U.S. Airstrikes on Insurgent Initiated Attacks in Yemen

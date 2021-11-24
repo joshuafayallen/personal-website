@@ -1,8 +1,8 @@
 ---
-cms_exclude: true
-header:
-  caption: ""
-  image: ""
+summary: ""
 title: Research
-view: 2
+aliases:
+- /research/working-papers/
+- /research/publications/
 ---
+
