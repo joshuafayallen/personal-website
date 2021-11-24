@@ -2,9 +2,9 @@
 header:
   caption: ""
   image: ""
-title: Courses
+title: Teaching
 type: page
 view: 2
 ---
 
-I teach the following courses:
+Check back soon where I will have stuff for my intro to American Government classes and more 
