@@ -83,6 +83,14 @@ mv. Rprofile .Rprofile-original
 ```
 
 
+Then close out Rstudio and reopen Rstudio. Then try to knit your super simple Rmd file and install a package and doing something fun! Than knit that file.
 
+Hopefully the dreaded C stack usage error is gone. If it is than celebrate
+<center>
 
+![](https://media.giphy.com/media/d86kftzaeizO8/giphy.gif)
+
+</center>
+
+because you can use `R` again!!!!
 
