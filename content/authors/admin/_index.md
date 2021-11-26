@@ -1,5 +1,5 @@
 ---
-bio: My Research interests include the political legacies of political violene
+#bio: My Research interests include the political legacies of political violence
 # education:
 #  courses:
  # - course: PhD in Political Science
