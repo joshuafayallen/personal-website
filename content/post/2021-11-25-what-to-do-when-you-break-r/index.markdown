@@ -5,7 +5,7 @@ date: '2021-11-25'
 slug: what-to-do-when-you-break-r
 categories: []
 tags: []
-subtitle: 'Dealing With C Stack Usage is too close to the limit'
+subtitle: 'Dealing With C Stack Usage is too close to the limit error'
 summary: ''
 authors: []
 lastmod: '2021-11-25T14:28:28-05:00'
