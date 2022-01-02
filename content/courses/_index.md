@@ -9,4 +9,4 @@ view: 2
 
 # Spring 2022
 
-- [Pols 1101 Intro to American Government](https://joshuafayallen.github.io/pols-1101-spring22/)
+- [Pols 1101 Intro to American Government](https://sppols110122.netlify.app/)
