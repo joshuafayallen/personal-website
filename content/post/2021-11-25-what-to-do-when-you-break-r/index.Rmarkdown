@@ -16,7 +16,7 @@ image:
   preview_only: no
 projects: []
 ---
-Hi all, when I first stated using `R` I tried making my website using `blogdown`. While [Alison Hill PhD](https://alison.rbind.io/post/new-year-new-blogdown/) provides an
+Hi all, when I first stated using `R` I tried making my website using `blogdown`. While [Alison Hill PhD](https://www.apreshill.com/blog/2020-12-new-year-new-blogdown/) provides an
 excellent intro to launching your website. However, I am truly special and managed to mess this process up. For a few days whenever I did anything more computationally intensive than 
 
 ```{r, message=FALSE}
@@ -27,7 +27,7 @@ library(tidyverse)
 
 I would get a nasty error message saying "c stack usage is too close to the limit" and I could not do anything. This would have been fine but at the time I was still taking classes and need to have `R` working to complete the problem sets.
 
-So what did I do to get in the c stack death spiral and how did it end up being fixed? For the former you should not skip steps in [Dr. Hill's](https://alison.rbind.io/post/new-year-new-blogdown/) post. For the later  well to spare you the long arduous process here is what we tried. 
+So what did I do to get in the c stack death spiral and how did it end up being fixed? For the former you should not skip steps in [Dr. Hill's](https://www.apreshill.com/blog/2020-12-new-year-new-blogdown/) post. For the later  well to spare you the long arduous process here is what we tried. 
 
 - me consulting stackoverflow & realizing I really f****k up
 - restarting my computer
