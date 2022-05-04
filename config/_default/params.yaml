@@ -79,7 +79,7 @@ highlight_languages:
   - r
   - python
   - latex
-highlight_style: "monokai"
+highlight_style: "monokai light"
 math: false
 diagram: false
 privacy_pack: false
