@@ -17,9 +17,9 @@ image:
 projects: []
 ---
 
-At GSU we have something called [Early Alert](https://success.students.gsu.edu/early-alert/#1491401397066-70b280d0-31cd2fde-8845) that is meant to connect students with resources if they are not doing well in the first few weeks of classes. While setting up your rules of thumb is up to you this can quickly soak up a full day if you are going row by row in your class of 60 or more students. To streamline the process I turned to `R` because it is a fairly simple data cleaning task.
+At GSU, we have [Early Alert](https://success.students.gsu.edu/early-alert/#1491401397066-70b280d0-31cd2fde-8845) that is meant to connect students with resources if they are not doing well in the first few weeks of classes. While setting up your rules of thumb is up to you, this can quickly soak up an entire day if you are going row by row in your class of 60 or more students. To streamline the process I turned to `R` because it is a fairly simple data cleaning task.
 
-Our learning management software likes to add lots of extra stuff to the column names in our data. While most of us would come up with a more concise name like `Chapter_4` our software names is `Chapter 4.2 Points Grade <Numeric MaxPoints:100 Weight:3.125 Category:Area9 Chapters CategoryWeight:23>`  we could use `janitor::clean_names` to eliminate some of the extraneous stuff iCollege will get grumpy at us. We could do this in Excel, and I have done it in the past, I figured I could speed this up in `R` while avoiding the headaches of having to ensure each and every column is where it should be.
+Our learning management software likes to add lots of extra stuff to the column names in our data. While most of us would come up with a more concise name like `Chapter_4` our software names is `Chapter 4.2 Points Grade <Numeric MaxPoints:100 Weight:3.125 Category:Area9 Chapters CategoryWeight:23>`  we could use `janitor::clean_names` to eliminate some of the extraneous stuff iCollege will get grumpy at us. We could do this in Excel, and I have done it in the past, I figured I could speed this up in `R` while avoiding the headaches of ensuring each and every column is where it should be.
 
 
 ```r
@@ -41,7 +41,7 @@ dat = tibble(id = 1:26,
 
 In this simple example there are only 5 columns they have annoying names sure but it is not that bad. We can probably copy and paste them and we will be fine. However, in my real data there are 13 or so chapters with a few subsections in each of them. So this can get out from under us kind of quick and copy and pasting does not make our lives any easier. We also usually get columns that do not help us. Our `ID` variable is not doing anything other than providing the same info in a less transparent way than the `student` name variable, and more minor items like surveys which do not have a lot of weight on their final grade.
 
-I just used `rnorm` for convenience however your data is more likely to look a little something like this. Where for whatever reason students did not do the assignment so I am just going to go ahead and punch some holes in it.
+I just used `rnorm` for convenience; however your data is more likely to have some missing values because students did not do stuff so it looks like this.
 
 
 | id|Students | Chapter 4.2 Points Grade <Numeric MaxPoints:100 Weight:3.125 Category:Area9 Chapters CategoryWeight:23>| Chapter 4.3 Points Grade <Numeric MaxPoints:100 Weight:3.125 Category:Area9 Chapters CategoryWeight:23>| Chapter 4.4  Points Grade <Numeric MaxPoints:100 Weight:3.125 Category:Area9 Chapters CategoryWeight:23>| Chapter 4.5  Points Grade <Numeric MaxPoints:100 Weight:3.125 Category:Area9 Chapters CategoryWeight:23>| Exam 1 Points Grade <Numeric MaxPoints:55 Weight 10 Category: Exams| surveys|
@@ -82,7 +82,7 @@ imputed =  dat_miss %>%
                   ), ~replace(., is.na(.), 0)))
 ```
 
-So that should take care of the `NA's` but we still need to generate our indicators. The assignments that carry the most weight are exams and the chapters so I tend to focus the most on those. In my use case taking the sum makes sense, but for yours the average is probably the better option. Thankfully while the names that the learning management software are a bit cumbersome they do share something in common. So we can use `mutate(across)` and `rowwise` to make our life easier. `rowwise` is a pretty neat little function that works perfectly when trying to do things for each [student](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-rowwise/). Than you can use `case_when` or `ifelse` to generate a logical. This is a toy example but we can easily start to build it out for our specific use cases. Using a mixture of `apply` and `select` you can achieve the same thing.
+So that should take care of the `NA's` but we still need to generate our indicators. The assignments that carry the most weight are exams and the chapters, so I focus the most on those. In my use case, taking the sum makes sense, but for yours the average is probably the better option. Thankfully, while the learning management software names are a bit cumbersome, they do share something in common. So we can use `mutate(across)` and `rowwise` to make our life easier. `rowwise` is a pretty neat little function that works perfectly for this task where you are trying to do things for each [student](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-rowwise/). Then you can use `case_when` or `ifelse` to generate a logical to create your flag. This is a toy example, but we can quickly start to build it out for our specific use cases. Using a mixture of `apply` and `select` you can achieve the same thing.
 
 
 ```r
@@ -100,7 +100,7 @@ flag$flag_apply = imputed %>%
 
 
 
-Cool we can use this for our basic stuff but what I tend to do is to weight exams by how well students did. So your highest exam score counts for more and your lowest exam has the least amount of weight. As with lots of things in `R` you can do this a few ways. There is probably a more concise way of doing this with `apply`  it is ugly but works. 
+Cool, we can use this for our basic stuff, but I tend to weigh exams by how well students did. So your highest exam score counts for more, and your lowest exam has the least amount of weight. As with lots of things in `R` you can do this a few ways. There is probably a more concise way of doing this with `apply`  it is ugly but works. 
 
 
 ```r
@@ -132,7 +132,7 @@ exams_complete = exams_complete %>%
   mutate(low_exam_dplyr = round(min(c_across(contains("Exam")))))
 ```
 
-So this is easy enough because we are just changing what we are doing with our summary function, but what about the second highest exam score? In this case you are going to have to use some trickery in order to get what you want
+So this is easy enough because we are just changing what we are doing with our summary function, but what about the second highest exam score? In this case you are going to have to use some trickery to get what you want
 
 
 ```r
@@ -146,7 +146,7 @@ exams_complete$second_highest = exams_complete %>%
 
 
 
-This is simple enough and you can just use `select` and `filter` to get the info you want. However, as we all know we have to do some grading. You can use all your favorite `dplyr` tricks to grade and impute grades if you want.  his is the easy part and now you can start to expand this out to actually using `R` to automate calculating grades. One super neat assignment all Intro to Government students at Georgia State do  is assigning an adult field trip of sorts that is free for them. The students go to the [National Center for Civil and Human Rights](https://www.civilandhumanrights.org/) and do a tour and simulation of the lunch counter sit ins. There are a few components to this one of which is that they submit a unique code as part of the proof that they have done it. Naturally as is the case some students just did not do it but that nbd just use our friend left join, but to retain all the students be sure to include `keep = TRUE` so each student gets graded. 
+This is simple enough and you can just use `select` and `filter` to get the info you want. However, as we all know we have to do some grading. You can use all your favorite `dplyr` tricks to grade and impute grades. This is the easy part, and now you can start to expand this out to using `R` to automate calculating grades. One super neat assignment all Intro to Government students at Georgia State do is assigning an adult field trip of sorts that is free for them. The students go to the [National Center for Civil and Human Rights](https://www.civilandhumanrights.org/) and do a tour and simulation of the lunch counter sit-ins. There are a few components to this: they submit a unique code as part of the proof that they have done it. Naturally, as is the case, some students just did not do it, but that nbd just use our friend left join, but to retain all the students be sure to include `keep = TRUE` so each student gets graded. 
 
 
 
@@ -167,7 +167,7 @@ grades_with_codes = left_join(exams_complete, codes_data, by = "Students", keep 
   select(-id.y, -Students.y, -code)
 ```
 
-In the real data I join by using last names which for the most part works. But you may need to check to make sure that your LMS has correctly spelled your students last name correctly or, just as importantly, they spelled their last name correctly. Hopefully this helps somebody if not at least it is tucked in a nice blog post. Be sure to check everything to make sure it is working but if it works correctly than hopefully you get a nice graded dataset 
+In the real data, I join by using last names, which works for the most part. But you may need to check to make sure that your LMS has correctly spelled your students’ last name or, just as importantly, they spelled their last name correctly. Hopefully, this helps somebody. If not, at least it is tucked in a nice blog post. Be sure to check everything to make sure it is working, but if it works correctly then hopefully , you get a nice graded dataset 
 
 
 
