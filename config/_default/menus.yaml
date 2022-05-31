@@ -13,22 +13,24 @@ main:
   - name: Research
     url: /research/
     weight: 3
+  - name: Working Papers
+    url:/research/working-papers/
   - name: Teaching
     url: /courses/
     weight: 4
-    
-posts: 
+
+posts:
   - name: Blog
   - weight: 1
 
-research: 
-  - name: Research 
+research:
+  - name: Research
   - weight: 1
   - name: Publications
-  - weight: 2 
+  - weight: 2
   - name: Working Papers
-  - weight: 3 
+  - weight: 3
 
-courses: 
+courses:
 - name: Teaching
 - weight: 1
