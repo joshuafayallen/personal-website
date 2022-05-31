@@ -7,4 +7,4 @@ menu:
 type: docs
 ---
 
-- test 
+- [Testing the Effects of U.S. Airstrikes on Insurgent Initiated Attacks in Yemen](https://joshuaallen.netlify.app/research/working-papers/testing-the-effects/)
