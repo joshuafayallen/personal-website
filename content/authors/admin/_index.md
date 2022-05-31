@@ -24,7 +24,7 @@ organizations:
 social:
 - icon: envelope
   icon_pack: fas
-  link: /#contact
+  link: jallen108@gsu.edu
 - display:
     header: true
   icon: twitter
