@@ -47,7 +47,7 @@ tweet_embed("https://twitter.com/andrewheiss/status/1358492134039511040")
 ```
 
 
-So here is what ended up working. To start you will need a super simple Rmd file to test with in a local directory. I suggest starting a new Rmd file with nothing in it other than the YAML header and "test" in the main body or "Lorem Ipsum" if you feel fancy. 
+So here is what ended up working. To start you will need a super simple Rmd file to test with in a local directory. I suggest starting a new Rmd file with nothing in it other than the default YAML header and "test" in the main body or "Lorem Ipsum" if you feel fancy. 
 
 
 In the terminal run the following code
