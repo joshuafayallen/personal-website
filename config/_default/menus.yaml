@@ -14,7 +14,8 @@ main:
     url: /research/
     weight: 3
   - name: Working Papers
-    url:/research/working-papers/
+    url: /working-papers
+    weight: 3
   - name: Teaching
     url: /courses/
     weight: 4

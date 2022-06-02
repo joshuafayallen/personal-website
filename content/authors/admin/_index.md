@@ -2,15 +2,15 @@
 #bio: My Research interests include the political legacies of political violence
 # education:
 #  courses:
- # - course: PhD in Political Science
-  #  institution: Georgia State University
-  #  year: 2012
-  # - course: MEng in Artificial Intelligence
-  # institution: Massachusetts Institute of Technology
-  #  year: 2009
-  # - course: BSc in Artificial Intelligence
-  #  institution: Massachusetts Institute of Technology
-  #  year: 2008
+#  - course: PhD in Political Science
+#    institution: Georgia State University
+#    year: in progress
+#  - course: M.A. Political Science 
+#    institution: Georgia State University
+#    year: 2019
+#  - course: B.A. Political Science
+#    institution: Sonoma State University
+#    year: 2017
 email: "jallen108@gsu.edu"
 highlight_name: true
 # interests:
