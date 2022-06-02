@@ -13,4 +13,4 @@ So far there are no publications to report but hopefully there will be something
 
 </center>
 
-In the mean time head over to the [working papers](https://joshuaallen.netlify.app/research/working-papers/) to check out what I am working on!
+In the mean time head over to the [working papers](https://joshuaallen.netlify.app/working-papers/) to check out what I am working on!
