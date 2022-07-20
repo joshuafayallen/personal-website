@@ -47,14 +47,25 @@
 
 % Default font is the helvetica postscript font
 \usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{cochineal}
+\usepackage{paracol}
+\usepackage{multicol}
+\usepackage{marvosym} 
+
+\usepackage{microtype}
 
 \newcommand{\fullhrulefill}{%
   \hspace*{-\sectionwidth}\hrulefill%
   }
-  \usepackage[colorlinks=false]{hyperref}
+  \usepackage{hyperref}
+  \hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = black, %Colour for external hyperlinks
+  linkcolor    = black, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
   \usepackage{url}
-% Increase text height
-\textheight=700pt
 
 \begin{document}
 
@@ -62,6 +73,7 @@
 %	NAME AND ADDRESS SECTION
 %-------------------------------------------------------------------------------
 \name{Joshua F. Allen}
+
 
 % Note that addresses can be used for other contact information:
 % -phone numbers
@@ -77,7 +89,6 @@
 %-------------------------------------------------------------------------------
 
 \begin{resume}
-
 %-------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %-------------------------------------------------------------------------------
@@ -99,7 +110,7 @@ Committee: Alex Berg (Chair), Daniel Altman, John Horgan
 
 \fullhrulefill
 \section{Additional Training}
-\textbf{Inter-university Consortium for Political and Social Research}\\ University of Michigan, Ann Arbor MI \\ Summer 2020
+\textbf{Inter-university Consortium for Political and Social Research \hfill{Jun 2020 - Aug 2020}}\\ University of Michigan, Ann Arbor MI \\ 
 \begin{itemize}
 	\item Machine Learning: Applications in Social Science Research
 	\item Panel Data and Longitudinal Analysis
@@ -118,11 +129,22 @@ Committee: Alex Berg (Chair), Daniel Altman, John Horgan
 \body\\
 \end{format}
 %-------------------------------------------------------------------------------
-\fullhrulefill
 
-\section{Awards, Grants, and Fellowships}
-\textbf {Presidential Fellow \hfill {Jan 2021 - April 2021 } \\ }
-\normalfont {Transcultural Conflict and Violence Initiative}
+\fullhrulefill
+\section {Conference Presentations}
+
+
+\textbf {Informal Institutions and Civilian Survival Strategies in Conflict \hfill{Oct 2020}  \\ }
+\normalfont {Presented at the Politics After War Workshop }
+
+\textbf {Testing The Effects of U.S. Airstrikes on Insurgent Initiated Violence \hfill{Jan 2020}  \\ }
+\normalfont { presented at the Southern Political Science Association Annual Meeting  }
+
+\textbf {Testing The Effects of U.S. Airstrikes on Insurgent Initiated Violence \hfill{Nov 2019}  \\ }
+\normalfont {presented at the International Studies Association-Midwest Nov 2019 }
+
+\textbf {Testing The Effects of U.S. Airstrikes on Insurgent Initiated Violence \hfill{Mar 2019} \\ }
+\normalfont {presented at Atlanta Symposium on Political Science }
 
 \fullhrulefill
 \section{Working Papers}
@@ -130,32 +152,29 @@ Committee: Alex Berg (Chair), Daniel Altman, John Horgan
 
 \textbf {Informal Institutions and Civilian Survival Strategies in Conflict}
 
+
+\newpage
 \fullhrulefill
-\section {Conference Presentations}
+
+\section{Awards \& Fellowships}
+Presidential Fellow \hfill{\textbf{Jan 2021 - Apr 2021 }} \\ \normalfont {Transcultural Conflict and Violence Initiative} 
+
+Nominated For Malcolm Jewell Award \hfill{\textbf{Jan 2020}} \\
+\normalfont{Southern Political Science Association Best Graduate Student Paper}
 
 
-\textbf {Informal Institutions and Civilian Survival Strategies in Conflict \hfill  \\ }
-\normalfont {Presented at the Politics After War Workshop Oct 2020}
-
-\textbf {Testing The Effects of U.S. Airstrikes on Insurgent Initiated Violence \hfill  \\ }
-\normalfont { presented at the Southern Political Science Association Annual Meeting  Jan 2020}
-
-\textbf {Testing The Effects of U.S. Airstrikes on Insurgent Initiated Violence \hfill  \\ }
-\normalfont {presented at the International Studies Association-Midwest Nov 2019 }
-
-\textbf {Testing The Effects of U.S. Airstrikes on Insurgent Initiated Violence \hfill \\ }
-\normalfont {presented at Atlanta Symposium on Political Science March 2019}
 
 \fullhrulefill
+
 \section{Invited Talks}
 
-\textbf{Data Visualization \hfill \\}
-\normalfont{Introductory Research Methods taught by Kristina LaPlant Ph.D.}
+\textbf{Data Visualization \hfill{Apr 2020} \\}
+\normalfont{Introductory Research Methods at University of Wisconsin LaCrosse \\ taught by Kristina LaPlant Ph.D. }
 
 \fullhrulefill
 \section{ Research Experience}
 
-\textbf {Graduate Research Assistant \hfill {March 2020 - May 2020} \\ }
+\textbf {Graduate Research Assistant \hfill {Mar 2020 - May 2020} \\ }
 \normalfont {Supervisor: Dan Altman}
 
 \textbf {Graduate Research Assistant \hfill {Jan 2020 - March 2020} \\ }
@@ -168,7 +187,7 @@ Committee: Alex Berg (Chair), Daniel Altman, John Horgan
 \fullhrulefill
 \section {Teaching Experience}
 
-\textbf {Introduction to American Government \hfill {June 2022 - July 2022} \\ }
+\textbf {Introduction to American Government \hfill {Jun 2022 - Jul 2022} \\ }
 \normalfont {Primary Instructor}
 
 \textbf {Introduction to American Government \hfill {Jan 2022 - May 2022} \\ }
@@ -183,18 +202,72 @@ Committee: Alex Berg (Chair), Daniel Altman, John Horgan
 
 \fullhrulefill
 \section{Technical Skills}
-\textbf{Computer Packages:} \normalfont{STATA, R, \LaTeX, Python(basic), Git, Rmarkdown }
+\textbf{Computer Packages:} \normalfont{STATA, R, \LaTeX,  Git, Rmarkdown }
 
 \fullhrulefill
 \section {Department Service}
-\normalfont{Atlanta Symposium on Political Science Chair 2020-2021}
+Atlanta Symposium on Political Science Chair \hfill{\textbf{Aug 2020- May 2021}}
 
-\normalfont {Atlanta Symposium on Political Science co-Chair 2019-2020}
+Atlanta Symposium on Political Science co-Chair \hfill{\textbf{Aug 2019- May 2020}}
 
 
 
 %-------------------------------------------------------------------------------
+\fullhrulefill
 
+\newpage
+\section{References}
+
+\begin{tabular}{lr}
+
+
+
+\begin{minipage}[t]{0.33\textwidth}
+
+    Carrie Manning\ \\
+    Professor of Political Science\\
+    Georgia State University\\
+    Atlanta, GA\\
+    \Letter\ \href{cmanning2@gsu.edu}{cmanning2\textrm{@}gsu.edu}
+
+\end{minipage}
+&
+\begin{minipage}[t]{0.33\textwidth}
+
+    Jelena Subotic\ \\
+    Professor of Political Science\\
+    Georgia State University\\
+    Atlanta, GA\\
+    \Letter\ \href{jsubotic@gsu.edu}{jsubotic\textrm{@}gsu.edu}
+
+\end{minipage}
+
+\\
+\\ % Additional newline for spacing.
+% Referee 3
+\begin{minipage}[t]{2.5in}
+    Ryan Carlin\ \\
+    Professor of Political Science\\
+    Georgia State University\\
+    Atlanta, GA\\
+    \Letter\ \href{rcarlin@gsu.edu}{rcarlin\textrm{@}gsu.edu}
+
+\end{minipage}
+
+&
+
+\begin{minipage}[t]{0.33\textwidth}
+   Michael Fix\ \\
+    Associate Professor of Political Science\\
+    Georgia State University\\
+    Atlanta, GA\\
+    \Letter\ \href{mfix@gsu.edu}{mfix\textrm{@}gsu.edu}
+
+\end{minipage}
+
+
+
+\end{tabular}
 
 \end{resume}
 \(\)\end{document}
